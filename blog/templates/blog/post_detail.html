@@ -59,41 +59,9 @@
     {% endif %}
 
 
-    <!-- <div id="disqus_thread"></div> -->
-  <!-- <script>
-      /**
-      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
 
-      var disqus_config = function () {
-      this.page.url = "{{ request.build_absolute_uri }}";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "{{ object.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-      };
-
-      (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = 'https://simpleisbetterthancomplex.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-      })();
-  </script> -->
     <div id="comment-root"></div>
-    <script>
-        var scripts = ["http://demo-dexos.simform.solutions/static/front/js/Dexos.js", "http://demo-dexos.simform.solutions/static/front/js/2.d0bf51e1.chunk.js", "http://demo-dexos.simform.solutions/static/front/js/main.3d4cbaa2.chunk.js"]
-        // DON'T EDIT BELOW THIS LINE
-        scripts.map((script, i) => {
-            console.log(script);
-            let d = document, s = d.createElement('script');
-            s.src = script;
-            if (i === scripts.length - 1) {
-                s.setAttribute('id', 'comment');
-                s.setAttribute('link',"{{ request.build_absolute_uri }}");
-                s.setAttribute('title', "{{ object.title }}");
-                s.setAttribute('website', "django-blog");
-            }
-            (d.head || d.body).appendChild(s);
-        })
-    </script>
+    <script src="/static/js/comments.js?id=comment&link={{ request.build_absolute_uri }}&title={{ object.title }}&website=django-blog"></script>
 
 </div>
 {% endblock content %}
